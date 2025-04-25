@@ -1,7 +1,60 @@
-[build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
-
 [project]
-name = "buva_qstream"
-version = "0.0.1"
+name = "buva-qstream"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Geoffrey Mastenbroek",email = "geoffrey@maschel.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "aiohttp (>=3.11.18,<4.0.0)"
+]
+
+[tool.black]
+line-length = 120
+target-version = ['py38', 'py39', 'py310']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.flake8]
+max-line-length = 120
+exclude = [
+    ".git",
+    "__pycache__",
+    "build",
+    "dist",
+    "venv",
+]
+ignore = [
+    "E203",  # Whitespace before ':'
+    "W503",  # Line break before binary operator
+    "C901",  # Too complex ( McCabe complexity )
+]
+per-file-ignores = """
+    __init__.py: F401
+"""
+select = ["E", "W", "F", "C"]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+flake8 = "^7.2.0"
+pre-commit = "^4.2.0"
+black = "^25.1.0"
+flake8-pyproject = "^1.2.3"
