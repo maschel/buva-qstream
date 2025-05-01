@@ -1,4 +1,5 @@
-from .device import qstream_device, QstreamDevice
+from .device import discover
+from .device import QstreamDevice
 from .api import QstreamAPI
 
-__all__ = ["QstreamDevice", "qstream_device"]
+__all__ = ["discover", "QstreamDevice"]

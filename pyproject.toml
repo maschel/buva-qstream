@@ -53,6 +53,9 @@ per-file-ignores = """
 """
 select = ["E", "W", "F", "C", "B"]
 
+[tool.pytest.ini_options]
+asyncio_default_fixture_loop_scope = "function"
+
 [tool.mypy]
 strict = true
 
@@ -67,3 +70,6 @@ black = "^25.1.0"
 flake8-pyproject = "^1.2.3"
 mypy = "^1.15.0"
 flake8-bugbear = "^24.12.12"
+pytest = "^8.3.5"
+pytest-asyncio = "^0.26.0"
+pytest-cov = "^6.1.1"

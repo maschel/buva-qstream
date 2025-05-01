@@ -10,7 +10,7 @@ _DEVICE_INFO_TIMEOUT_SEC = 1
 _LOGGER = logging.getLogger("device_info")
 
 
-async def qstream_device(ip_address: str) -> Optional["QstreamDevice"]:
+async def discover(ip_address: str) -> Optional["QstreamDevice"]:
     """Retrieve device info of Qstream device at specified address or network, with timeout.
 
     :param ip_address: The ip address or network broadcast address of the device.
