@@ -1,0 +1,34 @@
+name: Python application
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.11"
+    - name: Install dependencies
+      run: |
+        pip install poetry
+        poetry install
+    - name: Lint with black, flake8 and mypy
+      run: |
+        poetry run black --check .
+        poetry run flake8 .
+        poetry run mypy .
+    - name: Test with pytest
+      run: |
+        poetry run pytest
+    - name: Build with poetry
+      run: |
+        poetry build
