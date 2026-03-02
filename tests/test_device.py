@@ -94,7 +94,7 @@ class TestDevice:
         }
         device = QstreamDevice(device_info)
         expected_repr = (
-            'QstreamDeviceInfo(device="TestDevice", firmware_version="2.0", ip="10.0.0.5", mac="AA:BB:CC:DD:EE:FF")'
+            'QstreamDevice(device="TestDevice", firmware_version="2.0", ip="10.0.0.5", mac="AA:BB:CC:DD:EE:FF")'
         )
         assert repr(device) == expected_repr
 

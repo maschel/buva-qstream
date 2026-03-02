@@ -87,7 +87,7 @@ class QstreamDevice:
 
     def __repr__(self) -> str:
         return (
-            f'QstreamDeviceInfo(device="{self.device}", firmware_version="{self.firmware_version}", ip="{self.ip}"'
+            f'QstreamDevice(device="{self.device}", firmware_version="{self.firmware_version}", ip="{self.ip}"'
             f', mac="{self.mac}")'
         )
 
